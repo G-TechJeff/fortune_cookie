@@ -56,6 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
     "All our dreams can come true, if we have the courage to pursue them.— Walt Disney",
     "When you can’t find someone to follow, you have to find a way to lead by example." ,
     "There is no better compass than compassion." ,
+    "Surgery for my legs cause I can't stand you hoes.",
+    "Goodbyes are for those that leave and don't come back, I intend on coming back one day. _Thiago Solva ",
     "Stand before the people you fear and speak your mind – even if your voice shakes." ,
     "It’s a toxic desire to try to be perfect. I realized later in life that the challenge is not to be perfect. It’s to be whole." ,
     "Vitality shows not only in the ability to persist but in the ability to start over." ,
