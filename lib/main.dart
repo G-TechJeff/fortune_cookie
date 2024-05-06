@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
+import 'dart:ui_web';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -41,7 +42,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _counter =0;
   String currentfortune="";
 
   final fortunelist=[
@@ -64,6 +65,23 @@ class _MyHomePageState extends State<MyHomePage> {
     "The most common way people give up their power is by thinking they don’t have any." ,
     "Love yourself first and everything else falls into line." ,
     "In three words I can sum up everything I've learned about life: It goes on." ,
+    "Love yourself first and everything else falls into line. —Lucille Ball",
+    "What lies behind you and what lies in front of you, pales in comparison to what lies inside of you. —Ralph Waldo Emerson",
+    "Be yourself; everyone else is already taken.—Oscar Wilde",
+    "The most difficult thing is the decision to act; the rest is merely tenacity. —Amelia Earhart",
+    "Real change, enduring change, happens one step at a time. —Ruth Bader Ginsburg",
+    "Life isn't about finding yourself. Life is about creating yourself. —George Bernard Shaw",
+    "Above all, be the heroine of your life, not the victim. —Nora Ephron",
+    "We will fail when we fail to try. —Rosa Parks",
+    "Vitality shows not only in the ability to persist but in the ability to start over.—F. Scott Fitzgerald",
+    "Perfection is not attainable, but if we chase perfection we can catch excellence.—Vince Lombardi",
+    "The people who are crazy enough to think they can change the world are the ones who do.—Steve Jobs",
+    "Be a first-rate version of yourself, instead of a second-rate version of somebody else.—Judy Garland",
+    "Once you face your fear, nothing is ever as hard as you think.—Olivia Newton John",
+    "If my mind can conceive it, if my heart can believe it, then I can achieve it.—Muhammad Ali",
+    "All our dreams can come true — if we have the courage to pursue them. —Walt Disney",
+    "Embrace the glorious mess that you are.—Elizabeth Gilbert",
+    "Attitude is the 'little' thing that makes a big difference. —Winston Churchill",
   ];
    void randomfortune(){
     var random= Random();
@@ -99,6 +117,15 @@ class _MyHomePageState extends State<MyHomePage> {
           
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            
+            Card.outlined(
+              child: Image.asset(
+              "assets/images/net1.png", 
+               height: 200,
+              fit: BoxFit.fill,
+              ),
+            ),
+            
              Card(
               child: Padding(
                 padding:const EdgeInsets.all(10.0),
