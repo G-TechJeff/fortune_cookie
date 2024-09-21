@@ -1,29 +1,27 @@
 import 'dart:math';
-import 'dart:ui';
-import 'dart:ui_web';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:fortune_cookie/signin.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final bool isSmallScreen = MediaQuery.of(context).size.width < 600;
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Starnet Home Fiber',
       theme: ThemeData(
         
         
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 64, 238, 41)),
         useMaterial3: true,
       ),
-      home:  MyHomePage(title: 'Global-Net ltd',),
+      home:  MyHomePage(title: 'Starnet Home Fiber.',),
     );
   }
 }
@@ -42,7 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter =0;
+  int _counter =1;
   String currentfortune="";
 
   final fortunelist=[
@@ -58,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "When you can’t find someone to follow, you have to find a way to lead by example." ,
     "There is no better compass than compassion." ,
     "Surgery for my legs cause I can't stand you hoes.",
-    "Goodbyes are for those that leave and don't come back, I intend on coming back one day. _Thiago Solva ",
+    "Goodbyes are for those that leave and don't come back, I intend on coming back one day. _Thiago Silva ",
     "Stand before the people you fear and speak your mind – even if your voice shakes." ,
     "It’s a toxic desire to try to be perfect. I realized later in life that the challenge is not to be perfect. It’s to be whole." ,
     "Vitality shows not only in the ability to persist but in the ability to start over." ,
@@ -105,12 +103,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(
+      // appBar: AppBar(
         
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         
-        title: Text(widget.title),
-      ),
+      //   title: Text(widget.title),
+      // ),
       body: Center(
         
         child: Column(
@@ -121,23 +119,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Card.outlined(
               child: Image.asset(
               "assets/images/net1.png", 
-               height: 200,
+                height: 200,
+              width: BouncingScrollSimulation.maxSpringTransferVelocity,
               fit: BoxFit.fill,
               ),
             ),
-            
-             Card(
-              child: Padding(
-                padding:const EdgeInsets.all(10.0),
-                child: Text(
-              "Remember!",
-              style: Theme.of(context).textTheme.titleMedium,
-              ),
-                ),
-             ),
-              
-            
-
               
                Card(
                 child: Padding(
@@ -146,27 +132,30 @@ class _MyHomePageState extends State<MyHomePage> {
               "${currentfortune}",
              style:Theme.of(context).textTheme.titleLarge,
               ),
-                ),
-               
+                ),   
             ),
+            
 
-            ElevatedButton(onPressed: randomfortune, 
-            child: Text(" Next "),
+            FloatingActionButton( onPressed: randomfortune,
+        tooltip: 'learn',
+        child: const Icon(Icons.preview_outlined),//next_plan //add
+      ),
+
+            SizedBox(height: 10),
+
+             ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context)=>SignInPage2()));
+              },
+            child: Text(" Login"),
+            
             ),
-                       
-
-
-
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: randomfortune,
-        tooltip: 'learn',
-        child: const Icon(Icons.preview_outlined),//next_plan //add
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+     // This trailing comma makes auto-formatting nicer for build methods.
        
-
     );
   }
 }
